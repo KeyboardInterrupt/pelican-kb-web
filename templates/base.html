@@ -66,14 +66,14 @@
                 </p>
             </a>
             <ul class="main-menu">
-                {% if DISPLAY_PAGES_ON_MENU %}
-                    {% for p in pages %}
-                <li><a{% if p == page %} class="current-menu-item"{% endif %} href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a></li>
-                    {% endfor %}
-                {% endif %}
                 {% if DISPLAY_CATEGORIES_ON_MENU %}
                     {% for cat, null in categories %}
                   <li><a{% if cat == category %} class="current-menu-item"{% endif %} href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a></li>
+                    {% endfor %}
+                {% endif %}
+                {% if DISPLAY_PAGES_ON_MENU %}
+                    {% for p in pages %}
+                <li><a{% if p == page %} class="current-menu-item"{% endif %} href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a></li>
                     {% endfor %}
                 {% endif %}
                 {% for title, link in MENUITEMS %}
